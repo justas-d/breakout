@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Breakout</title>
+        <style>
+
+        @font-face {
+            font-family: "m5x7";
+            src: url("m5x7.ttf");
+        }
+
+        html {
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-crisp-edges;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+
+        body {
+            background-color: #0c0c0c;
+            /*background-image: url("bgtile.png");*/
+            /*background-size: cover;*/
+            /*background-repeat:repeat;*/
+
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-crisp-edges;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        canvas {  
+            width: 90vw;
+            height: 90vh;
+            object-fit: contain;
+        }
+        </style>
+    </head>
+    <body>
+        <script src="pep.js"></script>
+        <script src="rng.js"></script>
+        <script src="sfxr.js"></script>	
+        <script src="game.js"></script>	
+    </body>
+</html>
