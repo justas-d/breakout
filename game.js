@@ -596,9 +596,11 @@ function update(time) {
 
 
             {
-                    const slowmo = vec_len(b.vel)> 500;
+                const slowmo = vec_len(b.vel)> 500;
                 let normal = collide_with(b, pad);
                 if(normal) {
+                    normal[0] = 0;
+                    normal[1] = 1;
 
                     let vel = vec_normalize(b.vel);
                     let len = vec_len(pad.vel);
@@ -608,9 +610,7 @@ function update(time) {
                     b.vel[0] = vel[0] * ((len * 10) + 200);
                     b.vel[1] = vel[1] * ((len * 10) + 200);
 
-                    // NOTE(justas): in case we ever get stuck
-                    b.rect[0] += normal[0] * .1;
-                    b.rect[1] += normal[1] * .1;
+                    b.rect[1] = pad.rect[1] + (pad.rect[3] * .5) + (b.rect[3] * .5) + 5;
 
                     do_collide_tween(b, 1, TWEEN_LINEAR);
 
